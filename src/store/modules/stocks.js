@@ -1,5 +1,5 @@
 import data from '../../data/data'
-console.log(data)
+
 const state = {
     stocks: []
 };

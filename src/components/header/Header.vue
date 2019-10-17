@@ -6,7 +6,7 @@
            <router-link to="/stocks" tag="li"> <a>Stocks</a> </router-link>
         </ul>
         <hr>
-        <p>Funds: {{ funds }}</p>
+        <p>Funds: {{ funds | currency }}</p>
         <hr>
         <ul>
           <li>
@@ -25,9 +25,9 @@
         components: {
             appHome: Home
         },
-        data(){
-            return {
-                funds: '10.000$'
+        computed: {
+            funds(){
+                return this.$store.getters.getFunds;
             }
         }
     }
