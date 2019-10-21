@@ -1,13 +1,17 @@
 <template>
     <div>
         <h3>Workplace</h3>
+        <app-workplaceItem></app-workplaceItem>
     </div>
 </template>
 
 <script>
-export default {
-    
-}
+    import WorkplaceItem from './WorkplaceItem'
+    export default {
+        components: {
+            appWorkplaceItem: WorkplaceItem
+        }
+    }
 </script>
 
 <style scoped>

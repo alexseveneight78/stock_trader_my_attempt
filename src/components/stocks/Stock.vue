@@ -9,7 +9,10 @@
                 type="number"
                 v-model="quantity"
             >
-            <button @click="buyStocks">Buy</button>        
+            <button 
+                @click="buyStocks"
+                :disabled="this.quantity <= 0"
+                >Buy</button>        
         </div>
     </div>
 </template>
@@ -24,7 +27,12 @@
         },
         methods: {
             buyStocks(){
-                console.log(this)
+                const order = {
+                    stockIdToBuy: this.propsStock.id,
+                    stockPriceToBuy: this.propsStock.price,
+                    stockQuantityToBuy: this.quantity
+                };
+                this.$store.commit('buyStocks', order)
             }
         }
     }

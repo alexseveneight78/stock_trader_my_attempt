@@ -1,5 +1,6 @@
 const state = {
-    funds: 10000
+    funds: 10000,
+    stocks: []
 };
 
 const getters = {
@@ -9,7 +10,12 @@ const getters = {
 };
 
 const mutations = {
-
+    buyStocks (state, { stockIdToBuy, stockPriceToBuy, stockQuantityToBuy }) {
+        const record = state.stocks.find(element => element.id === stockIdToBuy);
+        if(record) {
+            stocks.quantity += stockQuantityToBuy;
+        }
+    }
 };
 
 const actions = {

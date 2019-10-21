@@ -18,6 +18,7 @@ const mutations = {
 
 const actions = {
     initStocks: ({ commit }) => {
+        console.log({commit})
         commit('setStocks', data)
     }
 };
