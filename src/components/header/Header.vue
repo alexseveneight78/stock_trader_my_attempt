@@ -6,7 +6,7 @@
            <router-link to="/stocks" tag="li"> <a>Stocks</a> </router-link>
         </ul>
         <hr>
-        <p>Funds: {{ funds | currency }}</p>
+        <p>Funds: {{ getFunds | currency }}</p>
         <hr>
         <ul>
           <li>
@@ -26,7 +26,7 @@
             appHome: Home
         },
         computed: {
-            funds(){
+            getFunds(){
                 return this.$store.getters.getFunds;
             }
         }
