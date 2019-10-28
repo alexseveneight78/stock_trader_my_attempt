@@ -1,8 +1,8 @@
 <template>
     <div class="workplaceComponent">
-        <div class="header">Brand: ...</div>
+        <div class="header">Brand: {{ myStock.brand }}</div>
         <hr>
-        <div class="price">Price: ...</div>
+        <div class="price+amount">Price: {{ myStock.price }} || Quantity: {{ myStock.quantity }}</div>
         <hr>
         <div class="sellOptions">
             <input 
@@ -19,6 +19,7 @@
 
 <script>
     export default {
+        props: ['myStock'],
         data(){
             return {
                 quantity: 0
@@ -26,7 +27,7 @@
         },
         methods: {
             sellStocks(){
-                console.log(this)
+                console.log(this.myStock)
             }
         }
     }

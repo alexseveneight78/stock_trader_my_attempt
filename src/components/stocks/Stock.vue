@@ -32,7 +32,7 @@
                     stockPriceToBuy: this.propsStock.price,
                     stockQuantityToBuy: this.quantity
                 };
-                this.$store.commit('buyStocks', order)
+                this.$store.commit('buyStocks', order);
             }
         }
     }
