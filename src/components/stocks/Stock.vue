@@ -30,7 +30,8 @@
                 const order = {
                     stockIdToBuy: this.propsStock.id,
                     stockPriceToBuy: this.propsStock.price,
-                    stockQuantityToBuy: this.quantity
+                    stockQuantityToBuy: this.quantity,
+                    stockName: this.propsStock.name
                 };
                 this.$store.commit('buyStocks', order);
             }

@@ -1,6 +1,6 @@
 <template>
     <div class="workplaceComponent">
-        <div class="header">Brand: {{ myStock.brand }}</div>
+        <div class="header">Brand: {{ myStock.name }}</div>
         <hr>
         <div class="price+amount">Price: {{ myStock.price }} || Quantity: {{ myStock.quantity }}</div>
         <hr>

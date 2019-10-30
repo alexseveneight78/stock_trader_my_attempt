@@ -13,7 +13,7 @@ const getters = {
             return {
                 id: stock.id,
                 quantity: stock.quantity,
-                brand: record.brand,
+                name: record.name,
                 price: record.price
             }
         })
@@ -21,17 +21,20 @@ const getters = {
 };
 
 const mutations = {
-    buyStocks (state, { stockIdToBuy, stockPriceToBuy, stockQuantityToBuy }) {
+    buyStocks (state, { stockIdToBuy, stockPriceToBuy, stockQuantityToBuy, stockName }) {
         const record = state.stocks.find(element => element.id === stockIdToBuy);
         if(record) {
             state.stocks.quantity += stockQuantityToBuy;
         } else {
             state.stocks.push({ 
                 id: stockIdToBuy, 
-                quantity: stockQuantityToBuy 
+                price: stockPriceToBuy,
+                quantity: stockQuantityToBuy,
+                name: stockName
             })
         }
-        state.getFunds -= stockIdToBuy * stockQuantityToBuy;
+        state.funds -= stockPriceToBuy * stockQuantityToBuy;
+        console.log(state.stocks)
     }
 };
 
